@@ -84,6 +84,29 @@ insert into Hventas (
 ) select ven.VentaID, ven.TiempoID, ven.ProductoID, ven.ClienteID, ven.VendedorID, ven.FechaVenta, ven.PrecioVenta, ven.TotalVenta, ven.CantidadVendida from Ventas as ven;
 
 
+ALTER TABLE Hventas ADD CONSTRAINT Dvendedor_Hventas_fk
+FOREIGN KEY (VendedorID)
+REFERENCES Hvendedor (VendedorID)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+ALTER TABLE Hventas ADD CONSTRAINT Dcliente_Hventas_fk
+FOREIGN KEY (DclienteID)
+REFERENCES Dcliente (ClienteID)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+ALTER TABLE Hventas ADD CONSTRAINT Dtiempo_Hventas_fk
+FOREIGN KEY (TiempoID)
+REFERENCES Dtiempo (TiempoID)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+ALTER TABLE Hventas ADD CONSTRAINT Dproducto_Hventas_fk
+FOREIGN KEY (ProductoID)
+REFERENCES Dproducto (ProductoID)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
 
 
 
