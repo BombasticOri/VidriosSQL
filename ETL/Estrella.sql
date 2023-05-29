@@ -2,10 +2,10 @@ CREATE TABLE Dproducto (
     ProductoID INT AUTO_INCREMENT,
     CodProducto VARCHAR(10) NOT NULL,
     NombreProducto VARCHAR(100) NOT NULL,
-    PrecioCompra VARCHAR(20) NOT NULL,
-    PrecioVenta VARCHAR(20) NOT NULL,
     CatProducto VARCHAR(100) NOT NULL,
     FamiliaProducto VARCHAR(100) NOT NULL,
+    PrecioCompra VARCHAR(20) NOT NULL,
+    PrecioVenta VARCHAR(20) NOT NULL,
     PRIMARY KEY (ProductoID)
 );
 
@@ -36,7 +36,7 @@ CREATE TABLE Dtiempo (
 );
 
 CREATE TABLE Hventas(
-    VentaID INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    VentaID INT AUTO_INCREMENT,
     TiempoID INT NOT NULL,
     ProductoID INT NOT NULL,
     ClienteID INT NOT NULL,
