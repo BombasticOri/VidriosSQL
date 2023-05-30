@@ -9,9 +9,9 @@ insert into Dproducto (
 from vidriosdb.Producto as p, vidriosdb.CategoriaProducto as cat, vidriosdb.FamiliaProducto as f;
 
 insert into Dcliente (
-    DireccionCliente,
-    Ciudad,
-    NombreCliente
+  DireccionCliente,
+  Ciudad,
+  NombreCliente
 ) select c.DireccionCliente, c.Ciudad, c.NombreCliente from vidriosdb.Cliente as c;
 
 insert into Dvendedor (
@@ -28,14 +28,14 @@ insert into dtiempo (
 ) select t.Fecha, t.Dia, t.Semana, t.Mes, t.Trimestre, t.Anio from vidriosdb.Tiempo as t;
 
 insert into Hventas (
-    VentaID,
-    TiempoID,
-    ProductoID,
-    ClienteID,
-    VendedorID,
-    FechaVenta,
-    PrecioVenta,
-    TotalVenta,
-    CantidadVendida
+  VentaID,
+  TiempoID,
+  ProductoID,
+  ClienteID,
+  VendedorID,
+  FechaVenta,
+  PrecioVenta,
+  TotalVenta,
+  CantidadVendida
 ) select ven.VentaID, ven.TiempoID, ven.ProductoID, ven.ClienteID, ven.VendedorID, ven.FechaVenta, ven.PrecioVenta, ven.TotalVenta, ven.CantidadVendida 
 from vidriosdb.Ventas as ven;

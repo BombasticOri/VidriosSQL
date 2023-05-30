@@ -59,10 +59,56 @@ CREATE TABLE Tiempo (
 /*Data for the table 'DTiempo' */
 
 insert into tiempo (Fecha, Dia, Semana, Mes, trimestre, Anio) values
-(now(),'Miercoles','Semana1','Mayo','Segundo','2023'),
-(now(),'Miercoles','Semana2','Mayo','Segundo','2023'),
-(now(),'Miercoles','Semana3','Mayo','Segundo','2023'),
-(now(),'Miercoles','Semana4','Mayo','Segundo','2023');
+('2023-05-15','Lunes','Semana3','Mayo','Segundo','2023'),
+('2023-05-15','Lunes','Semana3','Mayo','Segundo','2023'),
+('2023-05-15','Lunes','Semana3','Mayo','Segundo','2023'),
+('2023-05-15','Lunes','Semana3','Mayo','Segundo','2023'),
+('2023-05-15','Lunes','Semana3','Mayo','Segundo','2023'),
+('2023-05-15','Lunes','Semana3','Mayo','Segundo','2023'),
+('2023-05-16','Martes','Semana3','Mayo','Segundo','2023'),
+('2023-05-16','Martes','Semana3','Mayo','Segundo','2023'),
+('2023-05-17','Miercoles','Semana3','Mayo','Segundo','2023'),
+('2023-05-17','Miercoles','Semana3','Mayo','Segundo','2023'),
+('2023-05-17','Miercoles','Semana3','Mayo','Segundo','2023'),
+('2023-05-17','Miercoles','Semana3','Mayo','Segundo','2023'),
+('2023-05-18','Jueves','Semana3','Mayo','Segundo','2023'),
+('2023-05-19','Viernes','Semana3','Mayo','Segundo','2023'),
+('2023-05-19','Viernes','Semana3','Mayo','Segundo','2023'),
+('2023-05-20','Sábado','Semana3','Mayo','Segundo','2023'),
+('2023-05-20','Sábado','Semana3','Mayo','Segundo','2023'),
+('2023-05-20','Sábado','Semana3','Mayo','Segundo','2023'),
+('2023-05-20','Sábado','Semana3','Mayo','Segundo','2023'),
+('2023-05-20','Sábado','Semana3','Mayo','Segundo','2023'),
+('2023-05-20','Sábado','Semana3','Mayo','Segundo','2023'),
+('2023-05-20','Sábado','Semana3','Mayo','Segundo','2023'),
+('2023-05-20','Sábado','Semana3','Mayo','Segundo','2023'),
+('2023-05-21','Domingo','Semana4','Mayo','Segundo','2023'),
+('2023-05-21','Domingo','Semana4','Mayo','Segundo','2023'),
+('2023-05-21','Domingo','Semana4','Mayo','Segundo','2023'),
+('2023-05-22','Lunes','Semana4','Mayo','Segundo','2023'),
+('2023-05-22','Lunes','Semana4','Mayo','Segundo','2023'),
+('2023-05-22','Lunes','Semana4','Mayo','Segundo','2023'),
+('2023-05-23','Martes','Semana4','Mayo','Segundo','2023'),
+('2023-05-23','Martes','Semana4','Mayo','Segundo','2023'),
+('2023-05-23','Martes','Semana4','Mayo','Segundo','2023'),
+('2023-05-23','Martes','Semana4','Mayo','Segundo','2023'),
+('2023-05-24','Miercoles','Semana4','Mayo','Segundo','2023'),
+('2023-05-24','Miercoles','Semana4','Mayo','Segundo','2023'),
+('2023-05-25','Jueves','Semana4','Mayo','Segundo','2023'),
+('2023-05-25','Jueves','Semana4','Mayo','Segundo','2023'),
+('2023-05-25','Jueves','Semana4','Mayo','Segundo','2023'),
+('2023-05-25','Jueves','Semana4','Mayo','Segundo','2023'),
+('2023-05-25','Jueves','Semana4','Mayo','Segundo','2023'),
+('2023-05-25','Jueves','Semana4','Mayo','Segundo','2023'),
+('2023-05-25','Jueves','Semana4','Mayo','Segundo','2023'),
+('2023-05-26','Viernes','Semana4','Mayo','Segundo','2023'),
+('2023-05-26','Viernes','Semana4','Mayo','Segundo','2023'),
+('2023-05-27','Sábado','Semana4','Mayo','Segundo','2023'),
+('2023-05-28','Domingo','Semana5','Mayo','Segundo','2023'),
+('2023-05-28','Domingo','Semana5','Mayo','Segundo','2023'),
+('2023-05-28','Lunes','Semana5','Mayo','Segundo','2023'),
+('2023-05-29','Lunes','Semana5','Mayo','Segundo','2023'),
+('2023-05-29','Lunes','Semana5','Mayo','Segundo','2023');
 
 /*Table structure for table 'FamiliaProducto'*/
 
@@ -143,34 +189,95 @@ insert into producto (CodProducto, NombreProducto, CatProductoID, FamProductoID,
 ('016','Espejos convexos', 5, 3,'5.00','7.50'),
 ('017','Espejos decorativos', 5, 3,'5.00','7.50'),
 
-('018','Lamparas', 6, 3,'5.00','7.50'),
-('019','Vasos', 6, 3,'5.00','7.50'),
-('020','Ceniceros', 6, 3,'5.00','7.50');
+('018','Lamparas', 6, 3,'6.00','8.50'),
+('019','Vasos', 6, 3,'4.50','6.00'),
+('020','Ceniceros', 6, 3,'5.00','9.00');
 
 /*Table structure for table 'Ventas' */
 
 DROP TABLE IF EXISTS Ventas;
 
 CREATE TABLE Ventas (
-                VentaID INT AUTO_INCREMENT NOT NULL,
-                TiempoID INT NOT NULL,
-                ProductoID INT NOT NULL,
-                ClienteID INT NOT NULL,
-                VendedorID INT NOT NULL,
-                FechaVenta  DATE NOT NULL,
-                PrecioVenta  VARCHAR(40) NOT NULL,
-                TotalVenta  VARCHAR(40) NOT NULL,
-                CantidadVendida VARCHAR(40) NOT NULL,
-                PRIMARY KEY (VentaID, TiempoID, ProductoID, ClienteID, VendedorID)
+    VentaID INT AUTO_INCREMENT NOT NULL,
+    TiempoID INT NOT NULL,
+    ProductoID INT NOT NULL,
+    ClienteID INT NOT NULL,
+    VendedorID INT NOT NULL,
+    FechaVenta  DATE NOT NULL,
+    PrecioVenta  VARCHAR(40) NOT NULL,
+    TotalVenta  VARCHAR(40) NOT NULL,
+    CantidadVendida VARCHAR(40) NOT NULL,
+    PRIMARY KEY (VentaID, TiempoID, ProductoID, ClienteID, VendedorID)
 );
 
 /*Data for the table 'Ventas' */
 
 insert into ventas(tiempoid, productoid, clienteid, vendedorid, FechaVenta, PrecioVenta, TotalVenta, CantidadVendida) values
-(1,2,2,1,now(),'18.45','22.50','5'),
-(2,1,1,2,now(),'19.68','24.00','8'),
-(3,15,1,3,now(),'24.60','30.00','4'),
-(4,10,3,3,now(),'42.64','52.00','2');
+/*Lunes*/ 
+(1,2,2,3,'2023-05-15','18.45','22.50','5'),
+(2,1,2,3,'2023-05-15','19.68','24.00','8'),
+(3,18,1,3,'2023-05-15','24.60','30.00','4'), 
+(4,20,1,3,'2023-05-15','24.60','30.00','4'),
+(5,1,1,3,'2023-05-15','4.92','6.00','2'),
+(6,3,3,3,'2023-05-15','8.20','10.00','2'),
+/*Martes*/
+(7,5,4,1,'2023-05-16','19.68','24.00','4'),
+(8,8,5,1,'2023-05-16','39.36','48.00','6'),
+/*Miercoles*/
+(9,8,1,2,'2023-05-17','26.24','32.00','4'),
+(10,4,1,2,'2023-05-17','13.94','17.00','2'),
+(11,6,2,2,'2023-05-17','12.30','15.00','2'),
+(12,7,4,2,'2023-05-17','39.36','48.00','4'),
+/*Jueves*/
+(13,9,4,3,'2023-05-18','73.80','90.00','3'),
+/*Viernes*/
+(14,10,5,1,'2023-05-19','106.60','130.00','5'),
+(15,11,2,1,'2023-05-19','106.60','130.00','10'),
+/*Sábado*/
+(16,12,1,2,'2023-05-20','16.40','20.00','2'),
+(17,13,1,2,'2023-05-20','28.70','35.00','2'),
+(18,14,1,2,'2023-05-20','18.45','22.50','3'),
+(19,15,5,2,'2023-05-20','24.60','30.00','4'),
+(20,16,4,2,'2023-05-20','106.60','130.00','5'),
+(21,17,3,2,'2023-05-20','6.15','7.50','1'),
+(22,18,2,2,'2023-05-20','13.94','17.00','2'),
+(23,19,3,2,'2023-05-20','19.68','24.00','4'),
+/*Domingo*/
+(24,5,4,3,'2023-05-21','9.84','12.00','2'),
+(25,16,5,3,'2023-05-21','24.60','30.00','4'),
+(26,8,4,3,'2023-05-21','6.56','8.00','1'),
+/*Lunes*/
+(27,6,1,1,'2023-05-22','24.60','30.00','4'),
+(28,20,2,1,'2023-05-22','29.52','36.00','5'),
+(29,11,2,1,'2023-05-22','31.98','39.00','3'),
+/*Martes*/
+(30,15,5,2,'2023-05-23','24.60','30.00','4'),
+(31,19,3,2,'2023-05-23','24.60','30.00','5'),
+(32,11,3,2,'2023-05-23','63.96','78.00','6'),
+(33,13,1,2,'2023-05-23','28.70','35.00','2'),
+/*Miercoles*/
+(34,20,4,3,'2023-05-24','36.90','45.00','5'),
+(35,12,4,3,'2023-05-24','65.60','80.00','8'),
+/*Jueves*/
+(36,8,4,1,'2023-05-25','29.52','36.00','4'),
+(37,9,5,1,'2023-05-25','49.20','60.00','2'),
+(38,16,4,1,'2023-05-25','18.45','22.50','3'),
+(39,14,3,1,'2023-05-25','30.75','37.50','5'),
+(40,10,1,1,'2023-05-25','85.28','104.00','4'),
+(41,2,3,1,'2023-05-25','18.45','22.50','5'),
+(42,9,1,1,'2023-05-25','24.60','30.00','1'),
+/*Viernes*/
+(43,15,4,2,'2023-05-26','24.60','30.00','4'),
+(44,8,5,2,'2023-05-26','32.80','40.00','5'),
+/*Sábado*/
+(45,12,4,3,'2023-05-27','16.40','20.00','2'),
+/*Domingo*/
+(46,13,4,1,'2023-05-28','71.75','87.50','5'),
+(47,18,4,1,'2023-05-28','27.88','34.00','4'),
+/*Lunes*/
+(48,5,5,2,'2023-05-29','19.68','24.00','4'),
+(49,13,2,2,'2023-05-29','86.10','105.00','6'),
+(50,17,1,2,'2023-05-29','12.30','15.00','2');
 
 -- Relación de las tablas
 
