@@ -1,3 +1,5 @@
+use vidriosetl;
+
 insert into Dproducto (
   CodProducto,
   NombreProducto,
@@ -5,8 +7,10 @@ insert into Dproducto (
   FamiliaProducto,
   PrecioCompra,
   PrecioVenta
-) select p.CodProducto, p.NombreProducto, cat.NombreCatProducto, f.NombreFamProducto, p.PrecioCompra, p.PrecioVenta 
-from vidriosdb.Producto as p, vidriosdb.CategoriaProducto as cat, vidriosdb.FamiliaProducto as f;
+) SELECT p.CodProducto, p.NombreProducto, cat.NombreCatProducto, f.NombreFamProducto, p.PrecioCompra, p.PrecioVenta  
+FROM vidriosdb.Producto AS p INNER JOIN vidriosdb.CategoriaProducto 
+AS cat ON cat.CatProductoID = p.CatProductoID INNER JOIN vidriosdb.FamiliaProducto 
+AS f ON f.FamProductoID = p.FamProductoID GROUP BY p.CodProducto;
 
 insert into Dcliente (
   DireccionCliente,
@@ -33,9 +37,8 @@ insert into Hventas (
   ProductoID,
   ClienteID,
   VendedorID,
-  FechaVenta,
   PrecioVenta,
   TotalVenta,
   CantidadVendida
-) select ven.VentaID, ven.TiempoID, ven.ProductoID, ven.ClienteID, ven.VendedorID, ven.FechaVenta, ven.PrecioVenta, ven.TotalVenta, ven.CantidadVendida 
+) select ven.VentaID, ven.TiempoID, ven.ProductoID, ven.ClienteID, ven.VendedorID, ven.PrecioVenta, ven.TotalVenta, ven.CantidadVendida 
 from vidriosdb.Ventas as ven;

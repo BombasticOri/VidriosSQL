@@ -1,3 +1,7 @@
+create database vidriosetl;
+
+use vidriosetl;
+
 CREATE TABLE Dproducto (
     ProductoID INT AUTO_INCREMENT,
     CodProducto VARCHAR(10) NOT NULL,
@@ -41,7 +45,6 @@ CREATE TABLE Hventas(
     ProductoID INT NOT NULL,
     ClienteID INT NOT NULL,
     VendedorID INT NOT NULL,
-    FechaVenta  DATE NOT NULL,
     PrecioVenta  VARCHAR(40) NULL,
     TotalVenta  VARCHAR(40) NULL,
     CantidadVendida VARCHAR(40) NULL,
